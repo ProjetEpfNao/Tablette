@@ -47,6 +47,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:scaleType="centerCrop"
+
                 android:background="@drawable/ic_satisfied"
                 android:layout_weight="1"
                 />
@@ -73,6 +74,7 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:background="@drawable/ic_robot_wake_up"
                 android:layout_weight="1"
+                android:onClick="onClickStandUp"
                 />
             <Button
                 android:id="@+id/robotSitDownButton"
@@ -119,8 +121,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 >
+
                 <Button
+
                     android:id="@+id/arrowHeadTopButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -160,12 +165,13 @@
                 android:layout_weight="1"
                 >
 
-                <Button
+                <ImageButton
                     android:id="@+id/arrowHeadDownButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:background="@drawable/ic_arrow_down"
+                    android:src="@drawable/ic_arrow_down"
+                    android:background="#FFF"
 
                     />
 
