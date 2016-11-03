@@ -14,7 +14,6 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
 /**
  * Created by Coralie MIQUEL on 19/10/2016.
  */
@@ -31,7 +30,7 @@ public class ConnexionManager {
     }
 
     private ConnexionManager(Context context) {
-
+        //creation de la boite à cookies
         CookieJar cookieJar =
                 new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(context));
 
@@ -52,4 +51,7 @@ public class ConnexionManager {
     }
 
 
-}
+     public Call<ResponseBody> setConnection(String userName, String password) {
+        return connexionService.setConnection(userName, password);
+    }
+    }
