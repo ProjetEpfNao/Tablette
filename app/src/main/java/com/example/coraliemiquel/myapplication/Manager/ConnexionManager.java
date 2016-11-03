@@ -20,12 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnexionManager {
     private ConnexionService connexionService;
-
-    private static ConnexionManager ourInstance ;
-
-  /*  public static ConnexionManager getInstance() {
-        return ourInstance;
-    }*/
+    private static ConnexionManager ourInstance;
 
     public static ConnexionManager getInstance(Context context) {
         if (ourInstance == null){
@@ -35,7 +30,6 @@ public class ConnexionManager {
     }
 
     private ConnexionManager(Context context) {
-
         //creation de la boite à cookies
         CookieJar cookieJar =
                 new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(context));
