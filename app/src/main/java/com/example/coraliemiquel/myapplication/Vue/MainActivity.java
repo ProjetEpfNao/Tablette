@@ -23,7 +23,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     public final static String STAND_UP = "stand_up";
-    public ConnexionManager myConnexionManager = ConnexionManager.getInstance();
+    public ConnexionManager myConnexionManager = ConnexionManager.getInstance(this);
 
 
     @Override
