@@ -1,8 +1,11 @@
 package com.example.coraliemiquel.myapplication.Vue;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,12 +31,102 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
+        startActivity(intent);
+       return  super.onOptionsItemSelected(item);
+    }
 
     public void onClickStandUp(View v) {
         Call<ResponseBody> myCall = myConnexionManager.postCommand(STAND_UP);
         checkResponse(myCall);
     }
+
+    public void onClick (View v){
+
+        String value = null;
+        switch(v.getId()){
+            case R.string.batteryLevel: {
+                value = getString(R.string.batteryLevel);
+                break;
+            }
+            case R.string.handDown: {
+                 value = getString(R.string.headDown);
+                break;
+            }
+            case R.string.handUp: {
+                value = getString(R.string.handUp);
+                break;
+            }
+            case R.string.happy: {
+                value = getString(R.string.happy);
+                break;
+            }
+            case R.string.headDown: {
+                value = getString(R.string.headDown);
+                break;
+            }
+            case R.string.headLeft: {
+                value = getString(R.string.headLeft);
+                break;
+            }
+            case R.string.headRight: {
+                value = getString(R.string.headRight);
+                break;
+            }
+            case R.string.headTop: {
+                value = getString(R.string.headTop);
+                break;
+            }
+            case R.string.sayThisMessage: {
+                value = getString(R.string.sayThisMessage);
+                break;
+            }
+            case R.string.sitDown: {
+                value = getString(R.string.sitDown);
+                break;
+            }
+            case R.string.speak: {
+                value = getString(R.string.speak);
+                break;
+            }
+            case R.string.standUp: {
+                value = getString(R.string.standUp);
+                break;
+            }
+            case R.string.unhappy: {
+                value = getString(R.string.unhappy);
+                break;
+            }
+
+            default : {
+                value = getString(R.string.sitDown);
+                break;
+            }
+        }
+
+
+
+
+
+        Toast.makeText(getApplicationContext(), "OnButtonClicked : " + value, Toast.LENGTH_SHORT).show();
+
+    if(value!=null){
+        Call<ResponseBody> myCall = myConnexionManager.postCommand(value);
+        checkResponse(myCall);
+    }
+
+    }
+
+
 
 
 

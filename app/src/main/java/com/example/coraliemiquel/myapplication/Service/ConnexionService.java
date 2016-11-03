@@ -20,4 +20,14 @@ public interface  ConnexionService {
         @POST("add_command")
         Call<ResponseBody> setCommand(@Field("command") String command);
 
+    //AJOUTER UNE BOITE A COOKIES
+    //jAVA.NET
+
+
+
+        @FormUrlEncoded
+        @POST("login")
+        Call<ResponseBody> setConnection(@Field("username") String username,@Field("password") String password );
+
+
     }

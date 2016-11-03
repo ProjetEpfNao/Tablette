@@ -21,6 +21,8 @@ public class ConnectActivity extends AppCompatActivity {
 
 
     public void onClickConnect(View v) {
+
+
         Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
         startActivity(intent);
     }

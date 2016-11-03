@@ -22,76 +22,15 @@
             android:layout_weight="1"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/handUpButton"
+                android:id="@+id/handUp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:background="@drawable/ic_hand_up"
                 android:layout_weight="1"
-                />
-            <ToggleButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/ic_micro_toggle"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            >
-            <Button
-                android:id="@+id/happyButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:scaleType="centerCrop"
-
-                android:background="@drawable/ic_satisfied"
-                android:layout_weight="1"
-                />
-            <Button
-                android:id="@+id/sadButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:scaleType="centerCrop"
-                android:background="@drawable/ic_dissatisfied"
-                android:layout_weight="1"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            >
-            <Button
-                android:id="@+id/robotWakeUpButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_robot_wake_up"
-                android:layout_weight="1"
-                android:onClick="onClickStandUp"
-                />
-            <Button
-                android:id="@+id/robotSitDownButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_robot_sit_down"
-                android:layout_weight="1"
+                android:onClick="onClick"
                 />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            >
             <Button
                 android:id="@+id/righANoteButton"
                 android:layout_width="match_parent"
@@ -100,12 +39,89 @@
                 android:background="@drawable/ic_edit_note"
                 android:layout_weight="1"
                 />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
             <Button
-                android:id="@+id/sendDocButton"
+                android:id="@+id/happy"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_send_message"
+                android:scaleType="centerCrop"
+
+                android:background="@drawable/ic_satisfied"
+                android:layout_weight="1"
+
+                />
+            <Button
+                android:id="@+id/unhappy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:scaleType="centerCrop"
+                android:background="@drawable/ic_dissatisfied"
+                android:layout_weight="1"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageButton
+                android:id="@+id/standUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_stand_up"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                />
+            <Button
+                android:id="@+id/sitDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/ic_robot_sit_down"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_micro_toggle"/>
+
+            <ImageButton
+                android:id="@+id/speakQuietly"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/ic_volume_down"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/speakUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/ic_volume_up"
                 android:layout_weight="1"
                 />
 
@@ -124,14 +140,14 @@
                 android:layout_gravity="center"
                 >
 
-                <Button
+                <ImageButton
 
-                    android:id="@+id/arrowHeadTopButton"
+                    android:id="@+id/headTop"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:background="@drawable/ic_arrow_up"
-
+                    android:src="@drawable/ic_arrow_up"
+                    android:background="#FFF"
                     />
 
             </LinearLayout>
@@ -143,20 +159,22 @@
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 >
-                <Button
-                    android:id="@+id/arrowHeadLeftButton"
+                <ImageButton
+                    android:id="@+id/headLeft"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:background="@drawable/ic_arrow_left"
-                    android:layout_weight="1"/>
-                <Button
-                    android:id="@+id/arrowHeadRightButton"
+                    android:src="@drawable/ic_arrow_left"
+                    android:layout_weight="1"
+                    android:background="#FFF"/>
+                <ImageButton
+                    android:id="@+id/headRight"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:background="@drawable/ic_arrow_right"
-                    android:layout_weight="1"/>
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_weight="1"
+                    android:background="#FFF"/>
 
             </LinearLayout>
             <LinearLayout
@@ -166,7 +184,7 @@
                 >
 
                 <ImageButton
-                    android:id="@+id/arrowHeadDownButton"
+                    android:id="@+id/headDown"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"

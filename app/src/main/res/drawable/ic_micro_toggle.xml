@@ -1,9 +1,11 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
 <item android:state_checked="false"
-    android:drawable="@drawable/ic_micro_toggle_off" />
+    android:drawable="@drawable/ic_micro_toggle_off"
+    android:text=""/>
 
 <item android:state_checked="true"
-    android:drawable="@drawable/ic_micro_toggle_on" />
+    android:drawable="@drawable/ic_micro_toggle_on"
+    android:text=""/>
 
 </selector>
