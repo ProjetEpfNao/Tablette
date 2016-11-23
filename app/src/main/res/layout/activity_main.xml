@@ -16,6 +16,13 @@
         android:paddingRight="@dimen/activity_vertical_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/batteryLevel"
+            android:layout_weight="1.05"
+            android:src="@drawable/ic_full_battery"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -26,9 +33,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_hand_up"
+                android:background="@drawable/selector_arm_up"
                 android:layout_weight="1"
-                android:onClick="onClick"
+                android:onClick="onClickHandUp"
                 />
 
             <Button
@@ -36,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_edit_note"
+                android:background="@drawable/selector_edit_note"
                 android:layout_weight="1"
                 />
 
@@ -54,7 +61,7 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:scaleType="centerCrop"
 
-                android:background="@drawable/ic_satisfied"
+                android:background="@drawable/selector_unhappy"
                 android:layout_weight="1"
 
                 />
@@ -64,7 +71,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:scaleType="centerCrop"
-                android:background="@drawable/ic_dissatisfied"
+                android:background="@drawable/selector_happy"
                 android:layout_weight="1"
 
                 />
@@ -82,16 +89,16 @@
                 android:layout_margin="@dimen/activity_vertical_margin"
                 android:background="@drawable/selector_stand_up"
                 android:layout_weight="1"
-                android:onClick="onClick"
+                android:onClick="onClickStandUp"
                 />
             <Button
                 android:id="@+id/sitDown"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_robot_sit_down"
+                android:background="@drawable/selector_sit_down"
                 android:layout_weight="1"
-                android:onClick="onClick"
+                android:onClick="onClickSitDown"
                 />
 
         </LinearLayout>
@@ -113,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_volume_down"
+                android:background="@drawable/selector_vol_down"
                 android:layout_weight="1"
                 />
             <Button
@@ -121,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/activity_vertical_margin"
-                android:background="@drawable/ic_volume_up"
+                android:background="@drawable/selector_vol_up"
                 android:layout_weight="1"
                 />
 
@@ -146,8 +153,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:src="@drawable/ic_arrow_up"
+                    android:src="@drawable/selector_head_up"
                     android:background="#FFF"
+                    android:onClick="onClickHeadUp"
                     />
 
             </LinearLayout>
@@ -164,7 +172,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:src="@drawable/ic_arrow_left"
+                    android:src="@drawable/selector_head_left"
                     android:layout_weight="1"
                     android:background="#FFF"/>
                 <ImageButton
@@ -172,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:src="@drawable/ic_arrow_right"
+                    android:src="@drawable/selector_head_right"
                     android:layout_weight="1"
                     android:background="#FFF"/>
 
@@ -188,7 +196,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/activity_vertical_margin"
-                    android:src="@drawable/ic_arrow_down"
+                    android:src="@drawable/selector_head_dwn"
                     android:background="#FFF"
 
                     />
@@ -203,6 +211,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/class_background"
-        android:layout_weight="0.5"></LinearLayout>
+        android:layout_weight="0.5">
+        <VideoView
+            android:id="@+id/myVideo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true" />
+    </LinearLayout>
 
 </LinearLayout >

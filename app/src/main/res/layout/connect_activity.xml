@@ -51,10 +51,11 @@
             android:layout_weight="1"
             />
         <EditText
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="148dp"
             android:layout_weight="0.5"
-          android:text="TEST"
+          android:text="rr"
             android:background="#999"
             />
     </LinearLayout>
@@ -72,10 +73,11 @@
             android:src="@drawable/ic_password"
             android:layout_weight="1"/>
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="148dp"
             android:layout_weight="0.5"
-            android:text="TEST"
+            android:text="rr"
             android:background="#999"
             />
     </LinearLayout>

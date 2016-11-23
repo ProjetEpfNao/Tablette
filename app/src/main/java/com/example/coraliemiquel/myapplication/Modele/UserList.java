@@ -14,7 +14,7 @@ public class UserList extends Activity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.admin_activity);
+         /*   setContentView(R.layout.admin_activity);
             // Here come all the options that you wish to show depending on the
             // size of the array.
             array_spinner=new String[5];
@@ -26,7 +26,7 @@ public class UserList extends Activity {
             Spinner s = (Spinner) findViewById(R.id.Spinner01);
             ArrayAdapter adapter = new ArrayAdapter(this,
                     android.R.layout.simple_spinner_item, array_spinner);
-            s.setAdapter(adapter);
+            s.setAdapter(adapter);*/
         }
 
 }

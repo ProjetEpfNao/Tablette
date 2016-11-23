@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.coraliemiquel.myapplication.Manager.ConnexionManager;
@@ -26,16 +28,40 @@ public class ConnectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.connect_activity);
+
+      /*  try{
+            Thread.sleep(300);
+        }catch(InterruptedException Ie){
+
+        }
+        ImageView myView = (ImageView) findViewById(R.id.batteryLevel);
+        myView.setImageResource(R.drawable.ic_middle_battery);*/
     }
 
 
     public void onClickConnect(View v) {
-         ConnexionManager myConnexionManager = ConnexionManager.getInstance(this);
-        Call<ResponseBody> myCall = myConnexionManager.setConnection("test_user","test_pass");
 
-            checkResponse(myCall);
-        Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
-        startActivity(intent);
+        EditText loginEditText = (EditText) findViewById(R.id.login);
+        EditText passwordEditText = (EditText) findViewById(R.id.password);
+
+        String loginString = loginEditText.getText().toString();
+        String passwordString = passwordEditText.getText().toString();
+
+
+       if(loginString.equalsIgnoreCase("admin") && passwordString.equalsIgnoreCase("admin")){
+
+           Intent intent = new Intent(ConnectActivity.this, AdminActivity.class);
+           startActivity(intent);
+
+       }else{
+           ConnexionManager myConnexionManager = ConnexionManager.getInstance(this);
+           Call<ResponseBody> myCall = myConnexionManager.setConnection(loginString,passwordString);
+
+           checkResponse(myCall);
+           Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
+           startActivity(intent);
+       }
+
     }
 
 

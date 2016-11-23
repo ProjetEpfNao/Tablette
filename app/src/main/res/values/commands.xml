@@ -5,10 +5,12 @@
     <string name="sitDown">sit_down</string>
     <string name="handUp">raise_arm</string>
     <string name="handDown">lower_arm</string>
+    <string name="headTop">look_up</string>
+
+
 
     <string name="headRight">head_right</string>
     <string name="headDown">head_down</string>
-    <string name="headTop">head_top</string>
     <string name="headLeft">head_left</string>
 
     <string name="happy">thumbs_up</string>

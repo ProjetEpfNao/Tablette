@@ -7,6 +7,6 @@
 
 
     <item  android:state_focused="false"
-        android:drawable="@drawable/ic_robot_wake_up" />
+        android:drawable="@drawable/ic_robot_sit_down" />
 
 </selector>

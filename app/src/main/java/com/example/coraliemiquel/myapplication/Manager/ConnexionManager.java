@@ -60,4 +60,8 @@ public class ConnexionManager {
      public Call<ResponseBody> setConnection(String userName, String password) {
         return connexionService.setConnection(userName, password);
     }
+
+    public Call<ResponseBody> getLogout() {
+        return connexionService.getLogout();
+    }
     }

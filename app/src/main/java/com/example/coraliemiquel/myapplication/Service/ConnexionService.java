@@ -8,7 +8,9 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface  ConnexionService {
 
@@ -16,14 +18,12 @@ public interface  ConnexionService {
         public static final String ENDPOINT = "http://etiennedesticourt.pythonanywhere.com/";
 
 
+        @GET("logout")
+        Call<ResponseBody> getLogout();
+
         @FormUrlEncoded
         @POST("add_command")
         Call<ResponseBody> setCommand(@Field("command") String command);
-
-    //AJOUTER UNE BOITE A COOKIES
-    //jAVA.NET
-
-
 
         @FormUrlEncoded
         @POST("login")
