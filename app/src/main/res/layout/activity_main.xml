@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.6"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/batteryLevel"
+            android:layout_weight="1.05"
+            android:src="@drawable/ic_full_battery"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/handUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_arm_up"
+                android:layout_weight="1"
+                android:onClick="onClickHandUp"
+                />
+
+            <Button
+                android:id="@+id/righANoteButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_edit_note"
+                android:layout_weight="1"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <Button
+                android:id="@+id/happy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:scaleType="centerCrop"
+
+                android:background="@drawable/selector_unhappy"
+                android:layout_weight="1"
+
+                />
+            <Button
+                android:id="@+id/unhappy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:scaleType="centerCrop"
+                android:background="@drawable/selector_happy"
+                android:layout_weight="1"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <ImageButton
+                android:id="@+id/standUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_stand_up"
+                android:layout_weight="1"
+                android:onClick="onClickStandUp"
+                />
+            <Button
+                android:id="@+id/sitDown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_sit_down"
+                android:layout_weight="1"
+                android:onClick="onClickSitDown"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/ic_micro_toggle"/>
+
+            <ImageButton
+                android:id="@+id/speakQuietly"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_vol_down"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/speakUp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/selector_vol_up"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:orientation="vertical"            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                >
+
+                <ImageButton
+
+                    android:id="@+id/headTop"
+                    android:layout_width="248dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:src="@drawable/selector_head_up"
+                    android:background="#FFF"
+                    android:onClick="onClickHeadUp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <ImageButton
+                    android:id="@+id/headLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:src="@drawable/selector_head_left"
+                    android:layout_weight="1"
+                    android:background="#FFF"
+                    android:onClick="onClickHeadLeft"/>
+                <ImageButton
+                    android:id="@+id/headRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:src="@drawable/selector_head_right"
+                    android:layout_weight="1"
+                    android:background="#FFF"
+                    android:onClick="onClickHeadRight"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <ImageButton
+                    android:id="@+id/headDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:src="@drawable/selector_head_dwn"
+                    android:background="#FFF"
+                    android:onClick="onClickHeadDown"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF"
+        android:layout_weight="0.5">
+        <VideoView
+            android:id="@+id/myVideo"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true" />
+    </LinearLayout>
+
+</LinearLayout >
