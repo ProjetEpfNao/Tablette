@@ -1,9 +1,15 @@
 package com.example.coraliemiquel.myapplication.Events;
 
-public class BatteryEvent {
-    public int battery;
+import com.example.coraliemiquel.myapplication.Modele.ServerResponse;
 
-    public BatteryEvent(int battery) {
-        this.battery = battery;
+public class BatteryEvent extends ServerResponseEvent {
+    public int battery = 0;
+
+    public void setResponse(ServerResponse response) {
+        super.setResponse(response);
+
+        if (response.getContent() != null) {
+            battery = Integer.valueOf(response.getContent());
+        }
     }
 }

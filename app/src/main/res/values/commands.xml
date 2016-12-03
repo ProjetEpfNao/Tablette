@@ -25,4 +25,6 @@
 
     <string name="speakQuietly">speak_quietly</string>
     <string name="speakUp">speak_up</string>
+
+    <string name="battery">battery</string>
 </resources>
