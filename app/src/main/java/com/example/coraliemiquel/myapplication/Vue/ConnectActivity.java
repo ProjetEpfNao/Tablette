@@ -63,12 +63,12 @@ public class ConnectActivity extends AppCompatActivity {
                 startActivity(intent);
             }
             else {
-                Log.d("SERVER RESPONSE", "Failed to login.");
+                Log.d("SERVER RESPONSE", "Failure status. Failed to login.");
                 //TODO: DEAL WITH ERROR: SHOW ERROR; DONT GO TO NEXT ACTIVITY
             }
         }
         else {
-            Log.d("SERVER RESPONSE", "Failed to login.");
+            Log.d("SERVER RESPONSE", "Non 200 code. Failed to login.");
             //TODO: DEAL WITH ERROR: SHOW ERROR; DONT GO TO NEXT ACTIVITY
         }
     }

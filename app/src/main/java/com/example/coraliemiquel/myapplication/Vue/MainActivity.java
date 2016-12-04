@@ -58,10 +58,18 @@ public class MainActivity extends AppCompatActivity {
     public void onLogoutEvent(LogoutEvent event) {
         Log.d("EVENT", "Received logout event.");
         if (event.code == 200) {
-            Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
-            startActivity(intent);
+            if (event.response.getResult().equals("SUCCESS")) {
+                Log.d("SERVER RESPONSE", "Logged out.");
+                Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
+                startActivity(intent);
+            }
+            else {
+                Log.d("SERVER RESPONSE", "Failure status. Failed to logout.");
+                //TODO: DEAL WITH ERROR: SHOW ERROR; DONT GO TO NEXT ACTIVITY
+            }
         }
         else {
+            Log.d("SERVER RESPONSE", "Non 200 code. Failed to logout.");
             //TODO: DEAL WITH ERROR: SHOW ERROR; DONT GO TO NEXT ACTIVITY
         }
     }
