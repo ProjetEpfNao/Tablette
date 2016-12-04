@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.coraliemiquel.myapplication.Events.CallFailureEvent;
 import com.example.coraliemiquel.myapplication.Events.LoginEvent;
 import com.example.coraliemiquel.myapplication.Manager.ConnectionManager;
 import com.example.coraliemiquel.myapplication.R;
@@ -71,5 +72,11 @@ public class ConnectActivity extends AppCompatActivity {
             Log.d("SERVER RESPONSE", "Non 200 code. Failed to login.");
             //TODO: DEAL WITH ERROR: SHOW ERROR; DONT GO TO NEXT ACTIVITY
         }
+    }
+
+    @Subscribe
+    public void onCallFailureEvent(CallFailureEvent event) {
+        Log.d("EVENT", "Received CallFailure event.");
+        //TODO: DEAL WITH ERROR: SHOW MESSAGE TO USER ABOUT CONNECTION ERROR
     }
 }

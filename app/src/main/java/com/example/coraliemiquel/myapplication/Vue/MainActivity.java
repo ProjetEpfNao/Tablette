@@ -14,6 +14,7 @@ import android.widget.VideoView;
 
 import com.example.coraliemiquel.myapplication.Events.AddCommandEvent;
 import com.example.coraliemiquel.myapplication.Events.BatteryEvent;
+import com.example.coraliemiquel.myapplication.Events.CallFailureEvent;
 import com.example.coraliemiquel.myapplication.Events.LogoutEvent;
 import com.example.coraliemiquel.myapplication.Manager.BatteryLevelManager;
 import com.example.coraliemiquel.myapplication.Manager.ConnectionManager;
@@ -72,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
             Log.d("SERVER RESPONSE", "Non 200 code. Failed to logout.");
             //TODO: DEAL WITH ERROR: SHOW ERROR; DONT GO TO NEXT ACTIVITY
         }
+    }
+
+    @Subscribe
+    public void onCallFailureEvent(CallFailureEvent event) {
+        Log.d("EVENT", "Received CallFailure event.");
+        //TODO: DEAL WITH ERROR: SHOW MESSAGE TO USER ABOUT CONNECTION ERROR
     }
 
     @Override
