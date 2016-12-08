@@ -2,6 +2,7 @@ package com.example.coraliemiquel.myapplication.Vue;
 
 
 import android.content.Intent;
+import android.media.session.MediaController;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.VideoView;
 
@@ -86,11 +88,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        VideoView vidView = (VideoView)findViewById(R.id.myVideo);
-        String vidAddress = "http://54.152.73.101:8090/test.flv";
+        WebView webView = (WebView)findViewById(R.id.myVideo);
+        String vidAddress = "http://54.152.73.101:8090/test.webm";
         Uri vidUri = Uri.parse(vidAddress);
-        vidView.setVideoURI(vidUri);
-        vidView.start();
+
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl(vidAddress);
 
         this.batteryView = (ImageView) findViewById (R.id.batteryLevel);
         myBatteryLevelManager.callAsynchronousTask(myConnectionManager);
