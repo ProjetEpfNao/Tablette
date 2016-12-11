@@ -82,6 +82,7 @@
                 android:layout_weight="3"/>
 
             <EditText
+                android:id="@+id/identifiant"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -109,6 +110,7 @@
                 android:scaleType="fitCenter"
                 android:layout_weight="3"/>
             <EditText
+                android:id="@+id/motDePasse"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -135,6 +137,7 @@
                 android:scaleType="fitCenter"
                 android:layout_weight="3"/>
             <EditText
+                android:id="@+id/ipNao"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -160,6 +163,7 @@
                 android:scaleType="fitCenter"
                 android:layout_weight="3"/>
             <Button
+                android:id="@+id/ajouterButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="@dimen/connect_activity_vertical_margin"

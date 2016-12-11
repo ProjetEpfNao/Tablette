@@ -109,11 +109,14 @@
             android:layout_weight="1"
             >
 
-            <ToggleButton
+            <ImageButton
+                android:id="@+id/sayIt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/ic_micro_toggle"/>
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/ic_micro_toggle_on"
+               />
 
             <ImageButton
                 android:id="@+id/speakQuietly"

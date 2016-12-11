@@ -23,4 +23,12 @@ public interface ConnectionService {
     @FormUrlEncoded
     @POST("login")
     Call<ServerResponse> login(@Field("username") String username, @Field("password") String password );
+
+    @FormUrlEncoded
+    @POST("register")
+    Call<ServerResponse> register(@Field("username") String username, @Field("password") String password );
+
+    @FormUrlEncoded
+    @POST("add_command")
+    Call<ServerResponse> say_it(@Field("command") String command,@Field("content") String message);
 }

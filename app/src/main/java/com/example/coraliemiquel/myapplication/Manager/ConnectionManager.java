@@ -1,5 +1,4 @@
 package com.example.coraliemiquel.myapplication.Manager;
-
 import android.content.Context;
 
 import com.example.coraliemiquel.myapplication.Events.AddCommandEvent;
@@ -39,7 +38,7 @@ public class ConnectionManager {
 
     private ConnectionManager(Context context) {
         CookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(),
-                                                      new SharedPrefsCookiePersistor(context));
+                new SharedPrefsCookiePersistor(context));
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .cookieJar(cookieJar)
@@ -91,6 +90,19 @@ public class ConnectionManager {
     public void getBatteryInfo() {
         Call<ServerResponse> myCall = connectionService.add_command("battery");
         Callback callback = generateCallback(new BatteryEvent());
+        myCall.enqueue(callback);
+    }
+
+
+    public void creatNewUser(String username, String password,String ipNao){
+        Call<ServerResponse> myCall = connectionService.register(username, password);
+        Callback callback = generateCallback(new LoginEvent());
+        myCall.enqueue(callback);
+    }
+
+    public void sayIt(String message){
+        Call<ServerResponse> myCall = connectionService.register("speak", message);
+        Callback callback = generateCallback(new LoginEvent());
         myCall.enqueue(callback);
     }
 }

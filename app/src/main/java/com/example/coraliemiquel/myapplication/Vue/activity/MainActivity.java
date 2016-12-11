@@ -1,16 +1,20 @@
-package com.example.coraliemiquel.myapplication.Vue;
+package com.example.coraliemiquel.myapplication.Vue.activity;
 
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.media.session.MediaController;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.VideoView;
 
@@ -21,6 +25,7 @@ import com.example.coraliemiquel.myapplication.Events.LogoutEvent;
 import com.example.coraliemiquel.myapplication.Manager.BatteryLevelManager;
 import com.example.coraliemiquel.myapplication.Manager.ConnectionManager;
 import com.example.coraliemiquel.myapplication.R;
+import com.example.coraliemiquel.myapplication.Vue.fragments.SayItDialogFragment;
 
 
 import org.greenrobot.eventbus.EventBus;
@@ -88,12 +93,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         WebView webView = (WebView)findViewById(R.id.myVideo);
         String vidAddress = "http://54.152.73.101:8090/test.webm";
         Uri vidUri = Uri.parse(vidAddress);
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(vidAddress);
+
+        ImageButton sayItButton = (ImageButton) findViewById (R.id.sayIt);
+        sayItButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.this.onClickSayIt(v);
+            }
+        });
 
         this.batteryView = (ImageView) findViewById (R.id.batteryLevel);
         myBatteryLevelManager.callAsynchronousTask(myConnectionManager);
@@ -109,16 +123,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         myConnectionManager.logout();
+        //changement de vue
+        Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
+        startActivity(intent);
         return  super.onOptionsItemSelected(item);
     }
+
 
     private void executeCommand(String command) {
         myConnectionManager.addCommand(command);
     }
 
     public void onClickHandUp(View v){
-         String command = getString(R.string.handUp);
-         executeCommand(command);
+        String command = getString(R.string.handUp);
+        executeCommand(command);
     }
 
     public void onClickStandUp(View v){
@@ -149,5 +167,11 @@ public class MainActivity extends AppCompatActivity {
     public void onClickHeadDown(View v){
         String command = getString(R.string.headDown);
         executeCommand(command);
+    }
+
+    public void onClickSayIt(View v){
+        SayItDialogFragment dialog = new SayItDialogFragment();
+        dialog.show(MainActivity.this.getFragmentManager(), "NoticeDialogFragment");
+
     }
 }
