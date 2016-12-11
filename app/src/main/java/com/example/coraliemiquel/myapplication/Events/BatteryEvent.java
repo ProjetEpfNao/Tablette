@@ -8,6 +8,10 @@ public class BatteryEvent extends ServerResponseEvent {
     public void setResponse(ServerResponse response) {
         super.setResponse(response);
 
+        if (response == null) {
+            return;
+        }
+
         if (response.getContent() != null) {
             battery = Integer.valueOf(response.getContent());
         }
