@@ -7,6 +7,7 @@ import com.example.coraliemiquel.myapplication.Events.CallFailureEvent;
 import com.example.coraliemiquel.myapplication.Events.LoginEvent;
 import com.example.coraliemiquel.myapplication.Events.LogoutEvent;
 import com.example.coraliemiquel.myapplication.Events.ServerResponseEvent;
+import com.example.coraliemiquel.myapplication.Events.SpeakEvent;
 import com.example.coraliemiquel.myapplication.Modele.ServerResponse;
 import com.example.coraliemiquel.myapplication.Service.ConnectionService;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
@@ -101,8 +102,8 @@ public class ConnectionManager {
     }
 
     public void sayIt(String message){
-        Call<ServerResponse> myCall = connectionService.register("speak", message);
-        Callback callback = generateCallback(new LoginEvent());
+        Call<ServerResponse> myCall = connectionService.say_it("speak", message);
+        Callback callback = generateCallback(new SpeakEvent());
         myCall.enqueue(callback);
     }
 }
