@@ -49,6 +49,6 @@ public class BatteryLevelManager {
                 });
             }
         };
-        timer.schedule(doAsynchronousTask, 0, 3000); //execute in every 3s
+        timer.schedule(doAsynchronousTask, 0, 30000); //execute in every 3s
     }
 }
